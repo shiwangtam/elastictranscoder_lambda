@@ -1,5 +1,5 @@
 # elastictranscoder_lambda
-elastictranscoder_lambda on python
+elastictranscoder_lambda on python in order to automatically create transcoder job 
 
 # Procedure
 
