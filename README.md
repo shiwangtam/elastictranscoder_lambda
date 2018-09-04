@@ -6,7 +6,7 @@ elastictranscoder_lambda on python
 1. Create two S3 buckets. One is shiwang-et-input, the other one is shiwang-et-output. Create origin folder in shiwang-et-input. Create new & thumbernail folder in shiwang-et-output.
 
 2. Create IAM policy - shiwang-et-policy
-
+~~~
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -45,6 +45,7 @@ elastictranscoder_lambda on python
         }
     ]
 }
+~~~
 3. Create IAM role using this policy - shiwang-et-role.
 
 4. Create elastic transcoder pipeline - shiwang-et-pipeline and remember the pipeline ID
@@ -60,7 +61,7 @@ Event type: ObjectCreated
 Prefix: origin 
 
 6. Copy the following code
-
+~~~
 import boto3
 import json
 
@@ -130,7 +131,7 @@ def start_transcode(in_file, out_file, thumbnail_pattern):
                 'PresetId': preset_id
             }]
 )
-
+~~~
 7. Save lambda configuration
 
 8. Upload unconverted MP4 file to shiwang-et-input/origin 
